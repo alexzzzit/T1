@@ -25,7 +25,7 @@ workspace {
         client -> nginx "Создает соединения" "HTTP"
         
         nginx -> backend "Проксирует запросы" "HTTP/gRPC (Round Robin / Leastconn)"
-        nginx ..> client "Отдает 429 при превышении лимита" "Rate Limiting"
+        nginx -> client "Отдает 429 при превышении лимита" "Rate Limiting"
         
         backend -> cache "Читает кэш (GET)" "TCP"
         backend -> db "Пишет/Читает напрямую (если нет в кэше)" "SQL (TCP)"
