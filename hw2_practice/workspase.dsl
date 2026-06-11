@@ -1,3 +1,4 @@
+
 workspace {
     model {
         app = person "Приложение" "traffic-generator.py, генерирует нагрузку"
